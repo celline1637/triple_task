@@ -1,11 +1,17 @@
-import { Layout } from './components/layout';
-import { Section } from './components/section';
+import { BrowserRouter } from 'react-router-dom';
+import { ThemeProvider } from 'styled-components';
+import Routes from './Routes';
+import GlobalStyle from './theme/globalStyles';
+import theme from './theme/theme';
 
 function App() {
   return (
-    <Layout>
-      <Section title="title"></Section>
-    </Layout>
+    <ThemeProvider theme={theme}>
+      <GlobalStyle />
+      <BrowserRouter>
+        <Routes />
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
