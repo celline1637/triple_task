@@ -1,46 +1,49 @@
-# Getting Started with Create React App
+# triple 프론트엔드 과제
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+#### _FE sunkyung_
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+- `package.json`이 위치한 폴더에서 `npm install && npm start` 명령을 하면 http://localhost:3000/ 에 리액트 페이지가 실행됩니다.
 
-### `npm start`
+## File Structure
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+전체 파일 구조는 다음과 같습니다.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+공용컴포넌트 및 페이지 관련 컴포넌트를 분리하고,
+theme, hooks 관련 파일 등을 각각 나누어 관리하였습니다.
 
-### `npm test`
+```
+├── public
+├── src/
+│   ├── assets
+│   ├── components
+│   ├── hooks
+│   ├── pages
+│   └── theme
+├── App.tsx
+└── Routes.tsx
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Stack
 
-### `npm run build`
+- React
+- React Router DOM v6
+- Typescripts : 정적 언어인 Typescripts를 사용하여, js의 언어적 단점을 보완하였습니다.
+- styled-components
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Feature
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### /intro
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+('http://localhost:3000/'에서 'http://localhost:3000/intro'로 리다이렉트됩니다.)
 
-### `npm run eject`
+#### 필수 구현 사항
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+- 좌측 이미지, 지표 문구, 수상 내역 순으로 100ms의 간격으로 애니메이션 효과와 함께 나타납니다.
+- 지표는 2초 동안 0부터 증가하며, 점차 증가 속도가 느려집니다.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### 그 외 구현 사항
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- gnb가 스크롤에 따라 UI가 변화합니다.
+- 모든 애니메이션 효과는 viewport에 등장했을 때 trigger되어 나타납니다.
