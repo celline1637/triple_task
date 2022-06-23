@@ -1,6 +1,6 @@
-import * as S from './style';
+import * as S from './style'
 
-const LINKS = [{ text: '내 예약', link: '/' }];
+const LINKS = [{ text: '내 예약', link: '/' }]
 
 export const Gnb = () => {
   return (
@@ -16,5 +16,5 @@ export const Gnb = () => {
         </S.Menu>
       </S.Nav>
     </>
-  );
-};
+  )
+}

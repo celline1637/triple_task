@@ -1,6 +1,6 @@
-import { Navigate, useRoutes } from 'react-router-dom';
-import { Layout } from './components/layout';
-import { Intro } from './pages/intro';
+import { Navigate, useRoutes } from 'react-router-dom'
+import { Layout } from './components/layout'
+import { Intro } from './pages/intro'
 
 const Routes = () => {
   const routes = useRoutes([
@@ -13,9 +13,9 @@ const Routes = () => {
       path: '/',
       children: [{ path: 'intro', element: <Intro /> }],
     },
-  ]);
+  ])
 
-  return routes;
-};
+  return routes
+}
 
-export default Routes;
+export default Routes

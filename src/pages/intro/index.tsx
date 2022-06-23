@@ -1,5 +1,5 @@
-import { Award } from './components/award';
-import { Hero } from './components/hero';
+import { Award } from './components/award'
+import { Hero } from './components/hero'
 
 export const Intro = () => {
   return (
@@ -7,5 +7,5 @@ export const Intro = () => {
       <Hero />
       <Award />
     </>
-  );
-};
+  )
+}

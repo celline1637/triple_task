@@ -2,6 +2,11 @@
   "name": "triple_task",
   "version": "0.1.0",
   "private": true,
+  "prettier": "@titicaca/eslint-config-triple/prettierrc",
+  "lint:es": "eslint '**/*.{js,ts,tsx}'",
+  "lint:es:fix": "npm run lint:es -- --fix",
+  "lint:style": "stylelint './**/*.{js,ts,tsx}'",
+  "lint:style:fix": "stylelint './**/*.{js,ts,tsx}' --fix",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",

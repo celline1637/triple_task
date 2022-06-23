@@ -1,10 +1,10 @@
-import { useFadeIn } from '../../../../hooks';
-import { Section } from '../../../../components';
-import * as S from './style';
+import { useFadeIn } from '../../../../hooks'
+import { Section } from '../../../../components'
+import * as S from './style'
 
 export const Hero = () => {
-  const { ref, triggers } = useFadeIn(3);
-  const isShow = triggers as boolean[];
+  const { ref, triggers } = useFadeIn(3)
+  const isShow = triggers as boolean[]
 
   return (
     <S.Hero>
@@ -30,5 +30,5 @@ export const Hero = () => {
         </S.PhoneFrame>
       </Section>
     </S.Hero>
-  );
-};
+  )
+}

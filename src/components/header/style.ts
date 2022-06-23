@@ -1,6 +1,6 @@
-import styled, { css } from 'styled-components/macro';
+import styled, { css } from 'styled-components/macro'
 
-type propsType = { isShow: boolean };
+type propsType = { isShow: boolean }
 
 export const Header = styled.header<propsType>`
   display: flex;
@@ -23,7 +23,7 @@ export const Header = styled.header<propsType>`
       opacity: 1;
       transform: translateY(0);
     `};
-`;
+`
 
 export const BaseHeader = styled.div`
   display: flex;
@@ -36,4 +36,4 @@ export const BaseHeader = styled.div`
   & a {
     color: white;
   }
-`;
+`

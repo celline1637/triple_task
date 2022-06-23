@@ -10,4 +10,4 @@ export const colors = {
   black: '#3A3A3A',
   blue: '#3666FF',
   primary: '#0BD0AF',
-};
+}

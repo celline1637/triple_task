@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { createGlobalStyle } from 'styled-components'
+import reset from 'styled-reset'
 
 const GlobalStyle = createGlobalStyle`
   ${reset};
@@ -54,6 +54,6 @@ const GlobalStyle = createGlobalStyle`
     background: none;
     cursor: pointer;
   }
-`;
+`
 
-export default GlobalStyle;
+export default GlobalStyle

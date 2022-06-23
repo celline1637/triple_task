@@ -1,14 +1,14 @@
-import { APP_STORE, PLAY_STORE, TRIPLE_AWARD } from '../../../../assets/png';
-import { useFadeIn, useCountUp } from '../../../../hooks';
-import { Section } from '../../../../components';
-import * as S from './style';
+import { APP_STORE, PLAY_STORE, TRIPLE_AWARD } from '../../../../assets/png'
+import { useFadeIn, useCountUp } from '../../../../hooks'
+import { Section } from '../../../../components'
+import * as S from './style'
 
 export const Award = () => {
-  const { triggers, ref: fadeInRef } = useFadeIn(3);
-  const { numbers, ref: metricsRef } = useCountUp([700, 100, 470], {});
+  const { triggers, ref: fadeInRef } = useFadeIn(3)
+  const { numbers, ref: metricsRef } = useCountUp([700, 100, 470], {})
 
-  const isShow = triggers as boolean[];
-  const [traveler, reviews, plans] = numbers;
+  const isShow = triggers as boolean[]
+  const [traveler, reviews, plans] = numbers
 
   return (
     <Section>
@@ -48,5 +48,5 @@ export const Award = () => {
         </S.MetricsContainer>
       </S.Wrapper>
     </Section>
-  );
-};
+  )
+}

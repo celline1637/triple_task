@@ -1,6 +1,6 @@
-import styled from 'styled-components/macro';
-import { Button } from '../../../../components/button';
-import { fadeInStyle, fadeInUpStyle } from '../../../../theme/animation';
+import styled from 'styled-components/macro'
+import { Button } from '../../../../components/button'
+import { fadeInStyle, fadeInUpStyle } from '../../../../theme/animation'
 
 export const Hero = styled.div`
   height: 860px;
@@ -10,7 +10,7 @@ export const Hero = styled.div`
   background-color: ${({ theme }) => theme.colors.primary};
   background-image: url('https://triple.guide/intro/images/img-01-bg.png');
   background-size: 100% 100%;
-`;
+`
 
 export const Title = styled.h1`
   font-size: 90px;
@@ -18,19 +18,19 @@ export const Title = styled.h1`
   line-height: 1.1;
   letter-spacing: -3px;
   ${fadeInUpStyle}
-`;
+`
 
 export const SubTitle = styled.p`
   margin-top: 18px;
   margin-bottom: 76px;
   font-weight: 500;
   ${fadeInUpStyle}
-`;
+`
 
 export const AppLinkButton = styled(Button)`
   padding: 14px 44px;
   ${fadeInStyle}
-`;
+`
 
 export const PhoneFrame = styled.div`
   width: 330px;
@@ -45,7 +45,7 @@ export const PhoneFrame = styled.div`
   position: absolute;
   inset: 10px 0px auto auto;
   ${fadeInStyle}
-`;
+`
 
 export const PhoneScreen = styled.div`
   width: 300px;
@@ -56,4 +56,4 @@ export const PhoneScreen = styled.div`
   border-radius: 33px;
   background-size: 300px 650px;
   background-image: url('https://triple.guide/intro/images/img_01_screen_3_520@3x.png');
-`;
+`

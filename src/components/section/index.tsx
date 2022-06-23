@@ -1,9 +1,9 @@
-import * as S from './style';
+import * as S from './style'
 
 interface propsType {
-  children?: React.ReactNode;
+  children?: React.ReactNode
 }
 
 export const Section = ({ children }: propsType) => {
-  return <S.Section>{children}</S.Section>;
-};
+  return <S.Section>{children}</S.Section>
+}

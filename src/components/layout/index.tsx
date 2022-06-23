@@ -1,6 +1,6 @@
-import { Outlet } from 'react-router-dom';
-import { Header } from '../header';
-import * as S from './style';
+import { Outlet } from 'react-router-dom'
+import { Header } from '../header'
+import * as S from './style'
 
 export const Layout = () => {
   return (
@@ -10,5 +10,5 @@ export const Layout = () => {
         <Outlet />
       </S.Layout>
     </>
-  );
-};
+  )
+}
