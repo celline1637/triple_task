@@ -1,7 +1,6 @@
 import { APP_STORE, PLAY_STORE, TRIPLE_AWARD } from '../../../../assets/png';
-import { useCountUp } from '../../../../hooks/useCountUp';
-import { useFadeIn } from '../../../../hooks/useFadeIn';
-import { Section } from '../../../../components/section';
+import { useFadeIn, useCountUp } from '../../../../hooks';
+import { Section } from '../../../../components';
 import * as S from './style';
 
 export const Award = () => {

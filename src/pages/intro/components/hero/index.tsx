@@ -1,5 +1,5 @@
-import { useFadeIn } from '../../../../hooks/useFadeIn';
-import { Section } from '../../../../components/section';
+import { useFadeIn } from '../../../../hooks';
+import { Section } from '../../../../components';
 import * as S from './style';
 
 export const Hero = () => {
