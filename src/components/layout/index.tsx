@@ -1,11 +1,11 @@
 import { Outlet } from 'react-router-dom';
-import { Gnb } from '../gnb';
+import { Header } from '../header';
 import * as S from './style';
 
 export const Layout = () => {
   return (
     <>
-      <Gnb />
+      <Header />
       <S.Layout>
         <Outlet />
       </S.Layout>

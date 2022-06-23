@@ -13,8 +13,8 @@ const animationStyle = css<propsType>`
 `;
 
 export const Hero = styled.div`
-  width: 100%;
-  padding: 220px 0 240px;
+  height: 860px;
+  padding-top: 220px;
   color: white;
   overflow: hidden;
   background-color: ${({ theme }) => theme.colors.primary};

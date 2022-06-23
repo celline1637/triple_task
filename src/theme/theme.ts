@@ -1,27 +1,11 @@
-import { size } from './breakpoints'
-import { colors } from './palette'
-import {
-  calcRem,
-  calcP,
-  calcVw,
-  flexSet,
-  flexColumnSet,
-  posCenterX,
-  posCenterY,
-  posCenter,
-} from './position'
+import { size } from './breakpoints';
+import { colors } from './palette';
+import * as position from './position';
 
 const theme = {
-  calcRem,
-  calcP,
-  calcVw,
-  flexSet,
-  flexColumnSet,
-  posCenterX,
-  posCenterY,
-  posCenter,
+  ...position,
   colors,
   desktop: `(min-width: ${size.desktop})`,
-}
+};
 
-export default theme
+export default theme;
