@@ -1,53 +1,53 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { easing } from '../utils/easing';
 import useIntersectionObserver from './useIntersectionObserver';
 
 interface propType {
   duration?: number;
-  easing?: 'linear' | 'easeIn' | 'easeOut' | 'easeOutQuart';
+  easingType?: 'linear' | 'easeIn' | 'easeOut' | 'easeOutQuart';
 }
-
-const EASING = {
-  linear: (t: number) => t,
-  easeIn: (t: number) => t * t,
-  easeOut: (t: number) => t * (2 - t),
-  easeOutQuart: (t: number) => 1 - --t * t * t * t,
-  default: (t: number) => 1 - Math.exp(-t * 7),
-};
 
 export const useCountUp = (
   numbers: number[],
-  { duration, easing }: propType
+  { duration, easingType }: propType
 ) => {
   const [count, setCount] = useState<number[]>([]);
   const _duration = duration ?? 2000;
-  const _easing = easing ?? 'default';
+  const _easingType = easingType ?? 'default';
   const frameDuration = 1000 / 60;
   const totalFrames = Math.round(_duration / frameDuration);
 
-  const countUp = (num: number, index: number) => {
-    let frame = 0;
-    const counter = setInterval(() => {
-      frame++;
-      const progress = EASING[_easing](frame / totalFrames);
-      const currentCount = Math.ceil(num * progress);
-      setCount((prev) => {
-        const result = [...prev];
-        result.splice(index, 1, currentCount);
-        return result;
-      });
-      if (frame === totalFrames) {
-        clearInterval(counter);
-        return;
-      }
-    }, frameDuration);
-  };
+  const countUp = useCallback(
+    (num: number, index: number) => {
+      console.log('카운트업 중..');
+      let frame = 0;
+      const counter = setInterval(() => {
+        frame++;
+        const progress = easing[_easingType](frame / totalFrames);
+        const currentCount = Math.ceil(num * progress);
+        setCount((prev) => {
+          const result = [...prev];
+          result.splice(index, 1, currentCount);
+          return result;
+        });
+        if (frame === totalFrames) {
+          clearInterval(counter);
+          return;
+        }
+      }, frameDuration);
+    },
+    [_easingType, frameDuration, totalFrames]
+  );
 
-  const onIntersect: IntersectionObserverCallback = ([entry], observer) => {
-    if (entry.isIntersecting) {
-      numbers.forEach((num, i) => countUp(num, i));
-      observer.disconnect();
-    }
-  };
+  const onIntersect: IntersectionObserverCallback = useCallback(
+    ([entry], observer) => {
+      if (entry.isIntersecting) {
+        numbers.forEach((num, i) => countUp(num, i));
+        observer.disconnect();
+      }
+    },
+    [countUp, numbers]
+  );
 
   const { setTarget } = useIntersectionObserver({ onIntersect });
 

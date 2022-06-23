@@ -5,10 +5,10 @@ import { Section } from '../../../../components/section';
 import * as S from './style';
 
 export const Award = () => {
-  const { ref: fadeInRef, triggers } = useFadeIn(3);
-  const isShow = triggers as boolean[];
-
+  const { triggers, ref: fadeInRef } = useFadeIn(3);
   const { numbers, ref: metricsRef } = useCountUp([700, 100, 470], {});
+
+  const isShow = triggers as boolean[];
   const [traveler, reviews, plans] = numbers;
 
   return (
