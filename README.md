@@ -1,6 +1,10 @@
-# triple 프론트엔드 과제
+# Triple 프론트엔드 과제
 
 #### _FE sunkyung_
+
+## Preview
+
+![triple_task](https://user-images.githubusercontent.com/77728308/175335168-924a8211-1682-4884-92de-0cb39bbacbb4.gif)
 
 ## Installation
 
@@ -25,12 +29,12 @@ theme, hooks 관련 파일 등을 각각 나누어 관리하였습니다.
 └── Routes.tsx
 ```
 
-## Stack
+## Tech Stack
 
 - React
 - React Router DOM v6
-- Typescripts : 정적 언어인 Typescripts를 사용하여, js의 언어적 단점을 보완하였습니다.
-- styled-components
+- Typescripts : 정적 언어인 Typescripts를 사용하여, javascript의 언어적 단점을 보완하였습니다.
+- styled-components : css 모델을 컴포넌트 레벨로 추상화하여 사용할 수 있으며, props를 활용한 조건부 스타일링이 가능하다는 장점이 있습니다.
 
 ## Feature
 
