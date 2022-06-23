@@ -19,7 +19,6 @@ export const useCountUp = (
 
   const countUp = useCallback(
     (num: number, index: number) => {
-      console.log('카운트업 중..');
       let frame = 0;
       const counter = setInterval(() => {
         frame++;
