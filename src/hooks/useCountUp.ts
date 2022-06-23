@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import useIntersectionObserver from './useIntersectionObserver';
 
 interface propType {
@@ -18,7 +18,7 @@ export const useCountUp = (
   numbers: number[],
   { duration, easing }: propType
 ) => {
-  const [count, setCount] = useState([...numbers]);
+  const [count, setCount] = useState<number[]>([]);
   const _duration = duration ?? 2000;
   const _easing = easing ?? 'default';
   const frameDuration = 1000 / 60;
@@ -44,12 +44,18 @@ export const useCountUp = (
 
   const onIntersect: IntersectionObserverCallback = ([entry], observer) => {
     if (entry.isIntersecting) {
-      count.forEach((num, i) => countUp(num, i));
+      numbers.forEach((num, i) => countUp(num, i));
       observer.disconnect();
     }
   };
 
   const { setTarget } = useIntersectionObserver({ onIntersect });
+
+  useEffect(() => {
+    const initalValue = [...Array(numbers.length)].map((_) => 0);
+    setCount(initalValue);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   return {
     numbers: count,

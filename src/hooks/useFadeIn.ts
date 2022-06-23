@@ -15,10 +15,10 @@ export const useFadeIn = (triggers?: number) => {
 
   useEffect(() => {
     if (triggers) {
-      const initValue = {
+      const initalValue = {
         ...[...Array(triggers)].map((_) => false),
       };
-      setTrigger(initValue);
+      setTrigger(initalValue);
     }
   }, [triggers]);
 
