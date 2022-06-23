@@ -33,6 +33,7 @@ export const MetricsItem = styled.div`
   letter-spacing: -1px;
   margin-bottom: 20px;
   & > strong {
+    color: ${({ theme }) => theme.colors.black};
     font-weight: bold;
   }
 `
@@ -48,7 +49,9 @@ export const AwardsItem = styled.div`
   gap: 8px;
   height: 54px;
   padding-right: 39px;
+  color: ${({ theme }) => theme.colors.gray900};
   font-size: 14px;
+  font-weight: 700;
   line-height: 22px;
   & > img {
     width: 54px;
