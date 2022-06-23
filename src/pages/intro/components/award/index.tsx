@@ -4,22 +4,23 @@ import { useFadeIn } from '../../../../hooks/useFadeIn';
 import { Section } from '../../../../components/section';
 import * as S from './style';
 
-export const AwardSection = () => {
-  const { ref, triggers } = useFadeIn(3);
-  const { numbers, ref: MetricsRef } = useCountUp([700, 100, 470], {});
-  const [traveler, reviews, plans] = numbers;
+export const Award = () => {
+  const { ref: fadeInRef, triggers } = useFadeIn(3);
   const isShow = triggers as boolean[];
+
+  const { numbers, ref: metricsRef } = useCountUp([700, 100, 470], {});
+  const [traveler, reviews, plans] = numbers;
 
   return (
     <Section>
       <S.Wrapper>
-        <S.AwardImage ref={ref} isShow={isShow[0]}>
+        <S.AwardImage ref={fadeInRef} isShow={isShow[0]}>
           <img
             alt="트리플 플레이스토어 올해의 앱 최우수상 수상"
             src={TRIPLE_AWARD.default}
           />
         </S.AwardImage>
-        <S.MetricsContainer ref={MetricsRef} isShow={isShow[1]}>
+        <S.MetricsContainer ref={metricsRef} isShow={isShow[1]}>
           <S.MetricsItem>
             <strong>{traveler}만 명</strong>의 여행자
           </S.MetricsItem>

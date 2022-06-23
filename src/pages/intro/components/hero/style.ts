@@ -1,16 +1,6 @@
-import styled, { css } from 'styled-components/macro';
+import styled from 'styled-components/macro';
 import { Button } from '../../../../components/button';
-
-type propsType = {
-  isShow: boolean;
-  animationType?: string;
-};
-
-const animationStyle = css<propsType>`
-  animation: ${({ isShow, animationType }) =>
-      isShow && (animationType ?? 'fadeInUp')}
-    700ms ease-in-out;
-`;
+import { fadeInStyle, fadeInUpStyle } from '../../../../theme/animation';
 
 export const Hero = styled.div`
   height: 860px;
@@ -27,19 +17,19 @@ export const Title = styled.h1`
   font-weight: 700;
   line-height: 1.1;
   letter-spacing: -3px;
-  ${animationStyle}
+  ${fadeInUpStyle}
 `;
 
 export const SubTitle = styled.p`
   margin-top: 18px;
   margin-bottom: 76px;
   font-weight: 500;
-  ${animationStyle}
+  ${fadeInUpStyle}
 `;
 
 export const AppLinkButton = styled(Button)`
   padding: 14px 44px;
-  ${animationStyle}
+  ${fadeInStyle}
 `;
 
 export const PhoneFrame = styled.div`
@@ -54,7 +44,7 @@ export const PhoneFrame = styled.div`
   background-color: rgb(250, 250, 250);
   position: absolute;
   inset: 10px 0px auto auto;
-  ${animationStyle}
+  ${fadeInStyle}
 `;
 
 export const PhoneScreen = styled.div`

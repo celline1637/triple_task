@@ -1,14 +1,5 @@
-import styled, { css } from 'styled-components/macro';
-
-type propsType = {
-  isShow: boolean;
-};
-
-const fadeInStyle = css<propsType>`
-  opacity: ${({ isShow }) => (isShow ? 1 : 0)};
-  transform: translateY(${({ isShow }) => (isShow ? 0 : '10%')});
-  transition: all 700ms ease-in-out 0s;
-`;
+import styled from 'styled-components/macro';
+import { fadeInUpStyle } from '../../../../theme/animation';
 
 export const Wrapper = styled.div`
   ${({ theme }) => theme.flexSet('space-between', 'flex-start')};
@@ -18,7 +9,7 @@ export const Wrapper = styled.div`
 export const AwardImage = styled.div`
   width: 400px;
   position: relative;
-  ${fadeInStyle}
+  ${fadeInUpStyle}
 
   & > img {
     width: 100%;
@@ -33,8 +24,8 @@ export const AwardImage = styled.div`
   }
 `;
 
-export const MetricsContainer = styled.div<propsType>`
-  ${fadeInStyle}
+export const MetricsContainer = styled.div`
+  ${fadeInUpStyle}
 `;
 
 export const MetricsItem = styled.div`
@@ -46,10 +37,10 @@ export const MetricsItem = styled.div`
   }
 `;
 
-export const AwardsContainer = styled.div<propsType>`
+export const AwardsContainer = styled.div`
   margin-top: 50px;
   ${({ theme }) => theme.flexSet()};
-  ${fadeInStyle}
+  ${fadeInUpStyle}
 `;
 
 export const AwardsItem = styled.div`
