@@ -32,10 +32,9 @@ export const useFadeIn = (triggers?: number) => {
     // 관찰 대상이 화면에 나타났을 때, 100ms의 간격으로 trigger의 요소가 false에서 true로 변환
     if (isShow && trigger) {
       let triggerAnimation: NodeJS.Timeout
-      Object.values(trigger).forEach((bool, index) => {
-        let idx = index as 0 | 1 | 2
+      Object.values(trigger).forEach((_, index) => {
         triggerAnimation = setTimeout(() => {
-          setTrigger((prev) => ({ ...prev, [idx]: !bool }))
+          setTrigger((prev) => ({ ...prev, [index]: true }))
         }, index * 100)
       })
       return () => clearTimeout(triggerAnimation)
